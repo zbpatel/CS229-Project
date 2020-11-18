@@ -2,9 +2,9 @@
 # a simple model that averages all beam outputs and then fits a linear model to it
 
 from sklearn.linear_model import LinearRegression
+import numpy as np
 
-
-class bla_avg_model():
+class BlaAvgModel:
     model = None
 
     def __init__(self):
@@ -17,13 +17,14 @@ class bla_avg_model():
         :return: None
         """
         # avg y's
+        print(len(ys))
         avg = np.zeros_like(ys[0])
 
         for y in ys:
             avg = avg + y
         avg = avg / len(ys)
 
-        self.fit(X, avg)
+        self.model.fit(X, avg)
 
     def predict(self, X):
         """
