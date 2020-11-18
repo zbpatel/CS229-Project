@@ -16,8 +16,7 @@ class BlaAvgModel:
         :param y: list of bla outputs (np.arrays)
         :return: None
         """
-        # avg y's
-        print(len(ys))
+        # avg ys
         avg = np.zeros_like(ys[0])
 
         for y in ys:
